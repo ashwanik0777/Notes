@@ -77,11 +77,11 @@ export default function SignUpPage() {
   }
 
   return (
-    <main className="relative min-h-screen flex flex-col md:flex-row items-stretch bg-gray-50 dark:bg-gray-900">
+    <main className="relative min-h-screen flex flex-col md:flex-row items-stretch bg-blue-300 dark:bg-gray-900">
       
       {/* Left side: Form */}
       <div className="relative z-20 w-full md:w-1/2 flex items-center justify-center p-8 md:p-16">
-        <Card className="p-10 w-full max-w-md shadow-2xl rounded-3xl border border-white/30 bg-white/30 dark:bg-black/30 backdrop-blur-xl transition-all duration-500 space-y-6">
+        <Card className="p-10 w-full max-w-md shadow-2xl rounded-3xl border border-white/30 bg-blue-200 backdrop-blur-xl transition-all duration-500 space-y-6">
           <CardHeader>
             <CardTitle className="text-3xl font-bold text-center text-gray-900 dark:text-white tracking-tight">
               Sign up
