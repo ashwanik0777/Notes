@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { getDb } from "@/lib/db"
+import { dbConnect } from "@/lib/db"
 import { signinSchema } from "@/lib/validators"
 import { OtpCode } from "@/models/OtpCode"
 import { User } from "@/models/User"
@@ -7,7 +7,7 @@ import { signToken } from "@/lib/jwt"
 
 export async function POST(req: Request) {
   try {
-    await getDb()
+  await dbConnect()
     const body = await req.json()
     const parsed = signinSchema.safeParse(body)
     if (!parsed.success) {

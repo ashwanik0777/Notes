@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server"
 import { getTokenFromCookies } from "@/lib/jwt"
-import { getDb } from "@/lib/db"
+import { dbConnect } from "@/lib/db"
 import { User } from "@/models/User"
 
 export async function GET() {
   try {
-    await getDb()
+  await dbConnect()
     const jwt = getTokenFromCookies()
     if (!jwt) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     const user = await User.findById(jwt.sub)

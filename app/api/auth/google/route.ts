@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { OAuth2Client } from "google-auth-library"
-import { getDb } from "@/lib/db"
+import { dbConnect } from "@/lib/db"
 import { User } from "@/models/User"
 import { signToken } from "@/lib/jwt"
 
@@ -8,7 +8,7 @@ const GOOGLE_CLIENT_ID = process.env.GOOGLE_CLIENT_ID || process.env.NEXT_PUBLIC
 
 export async function POST(req: Request) {
   try {
-    await getDb()
+  await dbConnect()
     const { credential } = await req.json()
     if (!credential) return NextResponse.json({ error: "Missing Google credential" }, { status: 400 })
     if (!GOOGLE_CLIENT_ID) return NextResponse.json({ error: "Google client id not configured" }, { status: 500 })

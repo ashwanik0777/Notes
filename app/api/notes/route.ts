@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server"
 import { getTokenFromCookies } from "@/lib/jwt"
-import { getDb } from "@/lib/db"
+import { dbConnect } from "@/lib/db"
 import { Note } from "@/models/Note"
 
 export async function GET() {
   try {
-    await getDb()
+  await dbConnect()
     const jwt = getTokenFromCookies()
     if (!jwt) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     const notes = await Note.find({ userId: jwt.sub }).sort({ createdAt: -1 })
@@ -17,7 +17,7 @@ export async function GET() {
 
 export async function POST(req: Request) {
   try {
-    await getDb()
+  await dbConnect()
     const jwt = getTokenFromCookies()
     if (!jwt) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     const { text } = await req.json()

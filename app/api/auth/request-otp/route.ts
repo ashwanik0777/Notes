@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server"
-import { getDb } from "@/lib/db"
+import { dbConnect } from "@/lib/db"
 import { emailSchema } from "@/lib/validators"
 import { OtpCode } from "@/models/OtpCode"
 import { sendOtpEmail } from "@/lib/email"
@@ -10,7 +10,7 @@ function generateOtp() {
 
 export async function POST(req: Request) {
   try {
-    await getDb()
+    await dbConnect()
     const { email } = await req.json()
     const parsed = emailSchema.safeParse(email)
     if (!parsed.success) {

@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server"
 import { getTokenFromCookies } from "@/lib/jwt"
-import { getDb } from "@/lib/db"
+import { dbConnect } from "@/lib/db"
 import { Note } from "@/models/Note"
 
 export async function DELETE(_: Request, ctx: { params: { id: string } }) {
   try {
-    await getDb()
+  await dbConnect()
     const jwt = getTokenFromCookies()
     if (!jwt) return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     const id = ctx.params.id
