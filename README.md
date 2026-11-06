@@ -72,13 +72,13 @@ Frontend (Next.js/React)
 
 ---
 
-## 🖥️ Demo Preview
+##  Demo Preview
 
 > _Coming soon: Live demo & screenshots!_
 
 ---
 
-## 🔑 Authentication & Security
+##  Authentication & Security
 
 - **OTP-Based Auth:** Simple and secure. Sign up or sign in with your email—receive a one-time password.
 - **JWT Tokens:** All API calls require authentication; tokens are stored in HTTP-only cookies for safety.
