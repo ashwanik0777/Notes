@@ -1,4 +1,4 @@
-# 📝 Notes App
+#  Notes App
 
 A robust, full-stack, and modern note-taking application designed for simplicity and productivity. Create, manage, and instantly access your personal notes—anywhere, anytime.
 
@@ -10,13 +10,13 @@ A robust, full-stack, and modern note-taking application designed for simplicity
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 **Notes** is a feature-rich, type-safe application that empowers individual users to securely create, view, and manage their notes. Built with best practices in mind, it boasts a modern UI, flexible authentication (OTP & Google OAuth-ready), and a backend that seamlessly switches between in-memory and MongoDB storage.
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Secure Authentication:** Email + OTP login (Google OAuth pluggable)
 - **Personal Note Management:** Create, display, and delete notes, always tied to your personal account
@@ -28,7 +28,7 @@ A robust, full-stack, and modern note-taking application designed for simplicity
 
 ---
 
-## 🏛️ Architecture
+##  Architecture
 
 ```
 Frontend (Next.js/React)
@@ -51,7 +51,7 @@ Frontend (Next.js/React)
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 .
